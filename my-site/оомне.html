@@ -1,0 +1,223 @@
+<html>
+<head>
+    <title>English Tutor</title>
+    <link rel="stylesheet" href="css/стилиглавнжпт.css">
+</head>
+<body>
+<header class="header">
+    <div class="container header__inner">
+        <div class="logo">English Tutor</div>
+        <nav class="nav" id="nav">
+            <a href="главнаяжпт.html">Главная</a>
+            <a href="обучение.html">Обучение</a>
+            <a href="оомне.html" class="active">Обо мне</a>
+            <a href="отзывы.html">Отзывы</a>
+            <a href="контакты.html">Контакты</a>
+        </nav>
+		<button class="burger" id="burger">☰</button>  
+<button id="themeToggle" class="theme-btn">🌙</button>
+    </div>
+</header>
+<div class="margi">
+<center><h2>Обо мне</h2>
+<p class="subtitle">Профессиональный преподаватель английского языка с международными 
+сертификатами</p></center>
+</div>
+<div class="popi">
+<div class="pop"><img src="images/фото.jpg"></div>
+<div class="pop"><h3>Елена Смирнова</h3><br>
+
+<p class="subtitle">Здравствуйте! Я профессиональный преподаватель английского языка с более
+чем 10-летним опытом работы. Моя страсть к преподаванию началась во
+время учёбы в университете, когда я поняла, что хочу помогать людям
+открывать для себя мир английского языка.</p><br>
+
+<p class="subtitle">Я получила образование в лингвистическом университете и прошла обучение
+в Кембридже, где получила международные сертификаты CELTA и CPE. За
+годы работы я помогла более 500 ученикам достичь своих целей: от
+успешной сдачи экзаменов до свободного общения в путешествиях и
+карьерного роста.</p><br>
+
+<p class="subtitle">Моя методика основана на коммуникативном подходе — я уверена, что
+лучший способ выучить язык это активно его использовать. На моих уроках
+мы не только изучаем грамматику, но и много говорим, обсуждаем
+интересные темы и погружаемся в англоязычную культуру.</p>
+</div>
+</div>
+<div class="mem">
+<div class="me"><center>
+<img src="images/шляпп-no-bg-preview (carve.photos).png"><br>
+<b>10+ лет опыта</b><br>
+<p class="subtitle">Преподавания английского языка</p></center></div>
+<div class="me"><center>
+<img src="images/чемодан.png"><br>
+<b>500+ учеников</b><br>
+<p class="subtitle">Достигли своих целей</p></center></div>
+<div class="me"><center>
+<img src="images/медаль-no-bg-preview (carve.photos).png"><br>
+<b>15+ сертификатов</b><br>
+<p class="subtitle">Международных квалификаций</p></center></div>
+<div class="me"><center>
+<img src="images/сердецко-no-bg-preview (carve.photos).png"><br>
+<b>98+ довольных</b><br>
+<p class="subtitle">Студентов рекомендуют</p></center></div>
+</div>
+<section class="slider">
+  <div class="slides">
+    <img src="images/сертификат1.jpg" class="slide active">
+    <img src="images/сертификат2.jpg" class="slide">
+    <img src="images/сертификат3.jpg" class="slide">
+  </div>
+  <button class="arrow left">&#10094;</button>
+  <button class="arrow right">&#10095;</button>
+  <div class="dots">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+</section>
+<div class="education">
+<div class="edu">
+<h3>Образование</h3><br>
+<b>Московский государственный лингвистический университет</b><br>
+<p class="subtitle">Магистр лингвистики, 2011-2013</p><br>
+<b>Cambridge English Language Assessment</b><br>
+<p class="subtitle">CELTA, CPE, 2017-2018</p><br>
+</div>
+<div class="edu">
+<h3>Опыт работы</h3><br>
+<b>Частный репетитор</b><br>
+<p class="subtitle">2013 - настоящее время</p><br>
+<b>Преподаватель языковой школы</b><br>
+<p class="subtitle">2015-2020</p><br>
+</div></div>
+<footer class="footer">
+    <div class="container footer__inner">
+        <div>
+            <h4>English Tutor</h4>
+            <p>Профессиональное обучение английскому языку с индивидуальным подходом</p>
+        </div>
+        <div>
+            <h4>Контакты</h4>
+            <p>📞 +7 (999) 123-45-67</p>
+            <p>✉ info@englishtutor.ru</p>
+            <p>📍 Москва, Россия</p>
+        </div>
+        <div>
+           <h4>Навигация</h4>
+            <a href="главнаяжпт.html">Главная</a><br>
+            <a href="обучение.html">Обучение</a><br>
+            <a href="оомне.html">Обо мне</a><br>
+			 <a href="отзывы.html">Отзывы</a><br>
+            <a href="контакты.html">Контакты</a><br>
+        </div>
+    </div>
+    <div class="footer__bottom">
+        © 2025 English Tutor. Все права защищены.
+    </div>
+</footer>
+<script>
+const slides = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".dot");
+let index = 0;
+function showSlide(i) {
+  slides.forEach(slide => slide.classList.remove("active"));
+  dots.forEach(dot => dot.classList.remove("active"));
+  slides[i].classList.add("active");
+  dots[i].classList.add("active");
+}
+document.querySelector(".right").onclick = () => {
+  index = (index + 1) % slides.length;
+  showSlide(index);
+};
+document.querySelector(".left").onclick = () => {
+  index = (index - 1 + slides.length) % slides.length;
+  showSlide(index);
+};
+dots.forEach((dot, i) => {
+  dot.onclick = () => {
+    index = i;
+    showSlide(index);
+  };
+});
+setInterval(() => {
+  index = (index + 1) % slides.length;
+  showSlide(index);
+}, 4000);
+</script>
+<script>
+const angle = 20;
+const rotateCard = window;
+
+const lerp = (start, end, amount) => {
+    return (1 - amount) * start + amount * end;
+};
+
+const remap = (value, oldMax, newMax) => {
+    const newValue = ((value + oldMax) * (newMax * 2)) / (oldMax * 2) - newMax;
+    return Math.min(Math.max(newValue, -newMax), newMax);
+};
+
+window.addEventListener("DOMContentLoaded", (event) => {
+    const cards = document.querySelectorAll(".pop img");
+    cards.forEach((e) => {
+        e.addEventListener("mousemove", (event) => {
+            const rect = e.getBoundingClientRect();
+            const centerX = (rect.left + rect.right) / 2;
+            const centerY = (rect.top + rect.bottom) / 2;
+            const posX = event.pageX - centerX;
+            const posY = event.pageY - centerY;
+            const x = remap(posX, rect.width / 2, angle);
+            const y = remap(posY, rect.height / 2, angle);
+            e.dataset.rotateX = x;
+            e.dataset.rotateY = -y;
+        });
+
+        e.addEventListener("mouseout", (event) => {
+            e.dataset.rotateX = 0;
+            e.dataset.rotateY = 0;
+        });
+    });
+
+    const update = () => {
+        cards.forEach((e) => {
+            let currentX = parseFloat(e.style.getPropertyValue('--rotateY').slice(0, -1));
+            let currentY = parseFloat(e.style.getPropertyValue('--rotateX').slice(0, -1));
+            if (isNaN(currentX)) currentX = 0;
+            if (isNaN(currentY)) currentY = 0;
+            const x = lerp(currentX, e.dataset.rotateX, 0.05);
+            const y = lerp(currentY, e.dataset.rotateY, 0.05);
+            e.style.setProperty("--rotateY", x + "deg");
+            e.style.setProperty("--rotateX", y + "deg");
+        })
+    }
+    setInterval (update,1000/60)
+});
+</script>
+<script>
+const toggleBtn = document.getElementById('themeToggle');
+const body = document.body;
+if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark');
+    toggleBtn.textContent = '☀️';
+}
+toggleBtn.onclick = () => {
+    body.classList.toggle('dark');
+    if (body.classList.contains('dark')) {
+        localStorage.setItem('theme', 'dark');
+        toggleBtn.textContent = '☀️';
+    } else {
+        localStorage.setItem('theme', 'light');
+        toggleBtn.textContent = '🌙';
+    }
+};
+</script>
+<script>
+const burger = document.getElementById("burger");
+const nav = document.getElementById("nav");
+burger.onclick = function() {
+nav.classList.toggle("open");
+};
+</script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<html>
+<head>
+    <title>English Tutor</title>
+    <link rel="stylesheet" href="css/стилиглавнжпт.css">
+<script src="https://www.google.com/jsapi"></script>
+  <script>
+   google.load("visualization", "1", {packages:["corechart"]});
+   google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+     ['Область', 'до', 'после'],
+     ['Говорение', 27, 77],
+     ['Аудирование', 32, 78],
+     ['Чтение', 43, 89],
+	 ['Письмо', 30, 74],
+     ['Грамматика', 40, 82]
+    ]);
+    var options = {
+     title: 'Прогресс учеников (средние показатели)',
+     vAxis: {title: 'Уровень (%)'}
+    };
+    var chart = new google.visualization.ColumnChart(document.getElementById('mapl'));
+    chart.draw(data, options);
+   }
+  </script>
+</head>
+<body>
+<header class="header">
+    <div class="container header__inner">
+        <div class="logo">English Tutor</div>
+        <nav class="nav" id="nav">
+            <a href="главнаяжпт.html" class="active">Главная</a>
+            <a href="обучение.html">Обучение</a>
+            <a href="оомне.html">Обо мне</a>
+            <a href="отзывы.html">Отзывы</a>
+            <a href="контакты.html">Контакты</a>
+        </nav>
+		<button id="themeToggle" class="theme-btn">🌙</button>
+		<button class="burger" id="burger">☰</button>  
+    </div>
+</header>
+<main>
+<section class="hero">
+    <div class="container hero__inner">
+        <div class="hero__content">
+            <h1>Английский язык<br>с профессиональным репетитором</h1>
+            <p>
+                Ищешь репетитора по английскому языку? Тогда тебе точно ко мне.
+            </p><br>
+            <div class="hero__buttons">
+                <a href="контакты.html" class="btn primary">Записаться на пробный урок</a>
+                <a href="обучение.html" class="btn outline">Узнать больше</a>
+            </div>
+        </div>
+        <div class="hero__image">
+            <img src="images/herophoto.webp" alt="Motivation">
+        </div>
+    </div>
+</section>
+<section class="results>"
+        <div id="mapl"></div>
+</section>
+</main>
+<center><h2>Мини-игра на проверку знаний</h2>
+<p class="subtitle">Перетащи слово к его правильному переводу</p>
+<div class="contain">
+    <div class="words">
+        <div class="card" draggable="true" data-word="apple">apple</div>
+        <div class="card" draggable="true" data-word="dog">dog</div>
+        <div class="card" draggable="true" data-word="house">house</div>
+		<div class="card" draggable="true" data-word="school">school</div>
+        <div class="card" draggable="true" data-word="horse">horse</div>
+        <div class="card" draggable="true" data-word="carrot">carrot</div>
+    </div>
+    <div class="translations">
+        <div class="dropzone" data-word="dog">собака</div>
+        <div class="dropzone" data-word="apple">яблоко</div>
+		<div class="dropzone" data-word="carrot">морковь</div>
+        <div class="dropzone" data-word="horse">лошадь</div>
+		<div class="dropzone" data-word="house">дом</div>
+        <div class="dropzone" data-word="school">школа</div>
+    </div>
+</div>
+<script>
+let draggedCard = null;
+document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('dragstart', () => {
+        draggedCard = card;
+    });
+});
+document.querySelectorAll('.dropzone').forEach(zone => {
+    zone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        zone.classList.add('hovered');
+    });
+    zone.addEventListener('dragleave', () => {
+        zone.classList.remove('hovered');
+    });
+    zone.addEventListener('drop', () => {
+        zone.classList.remove('hovered');
+        if (draggedCard.dataset.word === zone.dataset.word) {
+            draggedCard.remove(); 
+            zone.remove();        
+        }		
+    });
+});
+</script>
+<footer class="footer">
+    <div class="container footer__inner">
+        <div>
+            <h4>English Tutor</h4>
+            <p>Профессиональное обучение английскому языку с индивидуальным подходом</p>
+        </div>
+        <div>
+            <h4>Контакты</h4>
+            <p>📞 +7 (999) 123-45-67</p>
+            <p>✉ info@englishtutor.ru</p>
+            <p>📍 Москва, Россия</p>
+        </div>
+        <div>
+            <h4>Навигация</h4>
+            <a href="главнаяжпт.html">Главная</a><br>
+            <a href="обучение.html">Обучение</a><br>
+            <a href="оомне.html">Обо мне</a><br>
+			 <a href="отзывы.html">Отзывы</a><br>
+            <a href="контакты.html">Контакты</a><br>
+        </div>
+    </div>
+    <div class="footer__bottom">
+        © 2025 English Tutor. Все права защищены.
+    </div>
+</footer>
+<script>
+const toggleBtn = document.getElementById('themeToggle');
+const body = document.body;
+if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark');
+    toggleBtn.textContent = '☀️';
+}
+toggleBtn.onclick = () => {
+    body.classList.toggle('dark');
+    if (body.classList.contains('dark')) {
+        localStorage.setItem('theme', 'dark');
+        toggleBtn.textContent = '☀️';
+    } else {
+        localStorage.setItem('theme', 'light');
+        toggleBtn.textContent = '🌙';
+    }
+};
+</script>
+<script>
+const burger = document.getElementById("burger");
+const nav = document.getElementById("nav");
+burger.onclick = function() {
+nav.classList.toggle("open");
+};
+</script>
+</body>
+</html>

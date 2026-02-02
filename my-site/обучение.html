@@ -1,0 +1,117 @@
+<html>
+<head>
+    <title>English Tutor</title>
+    <link rel="stylesheet" href="css/стилиглавнжпт.css">
+</head>
+<body>
+<header class="header">
+    <div class="container header__inner">
+        <div class="logo">English Tutor</div>
+        <nav class="nav" id="nav">
+            <a href="главнаяжпт.html">Главная</a>
+            <a href="обучение.html" class="active">Обучение</a>
+            <a href="оомне.html">Обо мне</a>
+            <a href="отзывы.html">Отзывы</a>
+            <a href="контакты.html">Контакты</a>
+        </nav>
+<button id="themeToggle" class="theme-btn">🌙</button>
+		<button class="burger" id="burger">☰</button>  
+    </div>
+</header>
+<div class="containerobu">
+<h3>Форматы обучения</h3><br>
+<p class="subtitle">Выберите для себя удобный формат занятий.</p>
+<div class="containe">
+<div class="item">
+<img src="images/индивид.png"><br>
+<b>Индивидуальные занятия</b><br>
+<p class="subtitle">🕒60 минут от 2000₽ </p><br>
+<p class="subtitle">☑ Полное внимание репетитора</p><br>
+<p class="subtitle">☑ Гибкий график</p><br>
+<p class="subtitle">☑ Программа лично под вас</p><br>
+<p class="subtitle">☑ Максимум разговорной практики</p></div>
+<div class="item">
+<img src="images/група-no-bg-preview (carve.photos).png"><br>
+<b>Групповые занятия</b><br>
+<p class="subtitle">🕒90 минут  от 1000₽ </p><br>
+<p class="subtitle">☑ Группы до 6 человек</p><br>
+<p class="subtitle">☑ Общение с другими людьми</p><br>
+<p class="subtitle">☑ Конкуренция</p><br>
+<p class="subtitle">☑ Доступная цена</p></div>
+<div class="item">
+<img src="images/онлайн.png"><br>
+<b>Онлайн-занятия</b><br>
+<p class="subtitle">🕒60 минут  от 1800₽ </p><br>
+<p class="subtitle">☑ Занятия из любой точки мира</p><br>
+<p class="subtitle">☑ Современные онлайн-платформы</p><br>
+<p class="subtitle">☑ Интерактив</p><br>
+<p class="subtitle">☑ Запись уроков</p></div>
+</div>
+<div class="cent">
+<h3>Программы обучения</h3>
+<div class="box">
+<div class="prog"><b>Общий английский</b><br>
+<p class="subtitle">Развитие всех языковых навыков для повседневного общения</p></div>
+<div class="prog"><b>Деловой английский</b><br>
+<p class="subtitle">Специализированный курс для бизнеса и карьеры</p></div>
+<div class="prog"><b>Подготовка к экзаменам</b><br>
+<p class="subtitle">ЕГЭ, ОГЭ</p></div>
+<div class="prog"><b>Разговорный английский</b><br>
+<p class="subtitle">Преодоление языкового барьера и развитие речи</p></div>
+<div class="prog"><b>Английский для детей</b><br>
+<p class="subtitle">Игровая методика обучения для детей 7-14 лет</p></div>
+<div class="prog"><b>Английский для путешествий</b><br>
+<p class="subtitle">Практические навыки для поездок за границу</p></div>
+</div></div>
+<footer class="footer">
+    <div class="container footer__inner">
+        <div>
+            <h4>English Tutor</h4>
+            <p>Профессиональное обучение английскому языку с индивидуальным подходом</p>
+        </div>
+        <div>
+            <h4>Контакты</h4>
+            <p>📞 +7 (999) 123-45-67</p>
+            <p>✉ info@englishtutor.ru</p>
+            <p>📍 Москва, Россия</p>
+        </div>
+        <div>
+            <h4>Навигация</h4>
+            <a href="главнаяжпт.html">Главная</a><br>
+            <a href="обучение.html">Обучение</a><br>
+            <a href="оомне.html">Обо мне</a><br>
+			 <a href="отзывы.html">Отзывы</a><br>
+            <a href="контакты.html">Контакты</a><br>
+        </div>
+    </div>
+    <div class="footer__bottom">
+        © 2025 English Tutor. Все права защищены.
+    </div>
+</footer>
+<script>
+const burger = document.getElementById("burger");
+const nav = document.getElementById("nav");
+burger.onclick = function() {
+  nav.classList.toggle("open");
+};
+</script>
+<script>
+const toggleBtn = document.getElementById('themeToggle');
+const body = document.body;
+if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark');
+    toggleBtn.textContent = '☀️';
+}
+toggleBtn.onclick = () => {
+    body.classList.toggle('dark');
+    if (body.classList.contains('dark')) {
+        localStorage.setItem('theme', 'dark');
+        toggleBtn.textContent = '☀️';
+    } else {
+        localStorage.setItem('theme', 'light');
+        toggleBtn.textContent = '🌙';
+    }
+};
+</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+:root {
+	--var: #3f5efb;
+	--kotiki: #386537;
+}
+[data-theme="dark"] {
+	--var: #fff;
+	--kotiki: #386537;
+}
+.theme-btn {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+margin-top: 0px;
+    margin-left: -400px;
+	margin-right: -170px;
+color: yellow;
+}
+body {
+transition: all 0.3s;
+}
+body.dark .header {
+    background: #1e1e1e;
+    border-bottom: 1px solid #333;
+}
+body.dark .nav a {
+    color: #ccc;
+}
+body.dark .nav a.active {
+    color: #6c8cff;
+}
+body.dark .results {
+    background: black;
+}
+body.dark .subtitle {
+    color: #aaa;
+}
+body.dark .card {
+    background: #3f5efb;
+}
+body.dark .dropzone {
+    background: #1e1e1e;
+    color: #ddd;
+    border-color: #555;
+}
+body.dark .footer {
+    background: #05070d;
+    color: #aaa;
+}
+body.dark .edu {
+background: #333333;
+color: white;
+}
+body.dark table {
+color: white;
+}
+body.dark .review {
+background: blue;
+}
+body.dark .hover {
+transform: translateY(-8px);
+border-top: 5px blue solid;
+box-shadow: 0 12px 28px rgba(255, 255, 255, 1);
+}

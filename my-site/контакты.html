@@ -1,0 +1,165 @@
+<html>
+<head>
+    <title>English Tutor</title>
+    <link rel="stylesheet" href="css/стилиглавнжпт.css">
+</head>
+<body>
+<header class="header">
+    <div class="container header__inner">
+        <div class="logo">English Tutor</div>
+        <nav class="nav" id="nav">
+            <a href="главнаяжпт.html">Главная</a>
+            <a href="обучение.html">Обучение</a>
+            <a href="оомне.html">Обо мне</a>
+            <a href="отзывы.html">Отзывы</a>
+            <a href="контакты.html" class="active">Контакты</a>
+        </nav>
+<button id="themeToggle" class="theme-btn">🌙</button>
+		<button class="burger" id="burger">☰</button>  
+    </div>
+</header>
+<div class="papa">
+<div class="containerobu">
+<h3>Контакты</h3><br>
+<p class="subtitle">Свяжитесь со мной для записи на пробный урок или задайте любые вопросы</p>
+</div>
+<div class="papa">
+<div class="pip">
+<h3>Как со мной связаться</h3>
+<div class="phone">
+<img src="images/телефон.png">
+<b>Телефон</b><br>
+<p class="subtitle">+7 (999) 123-45-67</p>
+<p class="subtitle">Ежедневно с 9:00 до 21:00</p>
+</div>
+<div class="email">
+<img src="images/ис.png">
+<b>Email</b><br>
+<p class="subtitle">info@englishtutor.ru</p>
+<p class="subtitle">Отвечу в течение 24 часов</p>
+</div>
+<div class="message">
+<img src="images/chat.png">
+<b>Мессенджеры</b><br>
+<p class="subtitle">Whatsapp, Telegram</p>
+<p class="subtitle">Быстрая связь в любое время</p>
+</div>
+<div class="adress">
+<img src="images/адрес.png">
+<b>Адрес</b><br>
+<p class="subtitle">Москва, метро Пушкинская</p>
+<p class="subtitle">Или онлайн занятия</p>
+</div>
+</div>
+<div class="free">
+<h2>Пробный урок бесплатно!</h2>
+<p class="subtitle">На первом занятии мы:</p>
+<p class="subtitle">✓ Определим ваш текущий уровень</p>
+<p class="subtitle">✓ Обсудим ваши цели и пожелания</p>
+<p class="subtitle">✓ Составим индивидульный план обучения</p>
+<p class="subtitle">✓ Познакомимся с методикой преподавания</p>
+</div>
+<div class="form">
+<form id="form">
+<h2>Записаться на пробный урок</h2>
+<b>Ваше имя*</b><br>
+<input type="text" id="name" placeholder="Иван Иванов"><br>
+<b>Email*</b><br>
+<input type="email" id="email" placeholder="englishtutor@mail.ru"><br>
+<b>Телефон*</b><br>
+<input type="phone" id="phone" placeholder="+79991234567"><br>
+<b>Ваш уровень английского</b><br>
+<select id="lvl">
+<option>A1</option>
+<option>A2</option>
+<option>B1</option>
+<option>B2</option>
+<option>C1</option>
+<option>C2</option>
+<option>Не знаю</option>
+</select><br>
+<b>Сообщение</b><br>
+<textarea id="pole" cols="50" rows="6"></textarea><br>
+ <button type="submit" class="btn">Отправить</button>
+</form>
+</div>
+</div>
+<div class="yn">
+<footer class="footer">
+    <div class="container footer__inner">
+        <div>
+            <h4>English Tutor</h4>
+            <p>Профессиональное обучение английскому языку с индивидуальным подходом</p>
+        </div>
+        <div>
+            <h4>Контакты</h4>
+            <p>📞 +7 (999) 123-45-67</p>
+            <p>✉ info@englishtutor.ru</p>
+            <p>📍 Москва, Россия</p>
+        </div>
+        <div>
+            <h4>Навигация</h4>
+            <a href="главнаяжпт.html">Главная</a><br>
+            <a href="обучение.html">Обучение</a><br>
+            <a href="оомне.html">Обо мне</a><br>
+			 <a href="отзывы.html">Отзывы</a><br>
+            <a href="контакты.html">Контакты</a><br>
+        </div>
+    </div>
+    <div class="footer__bottom">
+        © 2025 English Tutor. Все права защищены.
+    </div>
+</footer>
+</div>
+<script>
+document.getElementById("form").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const email = document.getElementById("email").value.trim();
+
+  if (name === "") {
+    alert("Поля не должны быть пустыми");
+	return;
+  }
+if (email === "") {
+    alert("Поля не должны быть пустыми");
+	return;
+  }
+if (phone === "") {
+    alert("Поля не должны быть пустыми");
+	return;
+  }
+  else {
+    alert("Заявка отправлена");
+    this.reset();
+  }
+});
+
+const burger = document.getElementById("burger");
+const nav = document.getElementById("nav");
+burger.onclick = function() {
+  nav.classList.toggle("open");
+};
+</script>
+<script>
+const toggleBtn = document.getElementById('themeToggle');
+const body = document.body;
+if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark');
+    toggleBtn.textContent = '☀️';
+}
+toggleBtn.onclick = () => {
+    body.classList.toggle('dark');
+    if (body.classList.contains('dark')) {
+        localStorage.setItem('theme', 'dark');
+        toggleBtn.textContent = '☀️';
+    } else {
+        localStorage.setItem('theme', 'light');
+        toggleBtn.textContent = '🌙';
+    }
+};
+</script>
+</body>
+</html>
